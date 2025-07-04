@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="! Assets/star.ico" type="image/x-icon">
+    <title>A magic show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('your-fake-home-background.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 1s ease;
+        }
+
+        #mask h1 {
+            color: white;
+            font-size: 3em;
+            text-shadow: 0 0 10px #000;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+        <h1>Benjikuo's Lab</h1>
+    </div>
+    <iframe src="home/index.html"></iframe>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('mask').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('mask').style.display = 'none';
+            }, 1000); // 等淡出完成後真正移除
+        }, 1500); // 顯示 1.5 秒後淡出
+    </script>
+</body>
+
+</html>
