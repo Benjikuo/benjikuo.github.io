@@ -1,0 +1,211 @@
+body {
+    font-family: "Segoe UI", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    background-color: #fff;
+    color: hsl(0, 0%, 0%);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 5px 20px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+}
+
+.name img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.name a {
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    color: #222;
+    position: relative;
+    transition: all 0.4s ease;
+    top: none;
+}
+
+.name a:hover {
+    color: #dc6fe6;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #ffbbf9, 0 0 20px #f0c4ff;
+    transition: all 0.4s ease;
+    top: -2px;
+}
+
+.name a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    /* 彩色底線 */
+    transition: transform 0.3s ease;
+    border-radius: 3px;
+}
+
+.name a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: px 10px;
+    border-radius: 5px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+}
+
+nav a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+nav a:hover {
+    color: #ee9804;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #099ee8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.tag-text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 18px;
+    margin-left: 45px;
+}
+
+.tag-icon {
+    display: flex;
+    cursor: pointer;
+    gap: 15px;
+    font-size: 20px;
+    margin-left: 45px;
+}
+
+.tag-icon span {
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tag-icon span:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 5px #6f6f6f);
+    cursor: pointer;
+    top: -1px;
+}
+
+.small-display {
+    display: none;
+}
+
+.main-area {
+    display: flex;
+    padding: 40px 30px;
+    gap: 40px;
+}
+
+.left-box {
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media screen and (max-width: 995px) {
+    .tag-icon {
+        display: none;
+    }
+
+    .small-display {
+        display: flex;
+        cursor: pointer;
+        font-size: 22px;
+        margin-left: 45px;
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .contact {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .game {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .hobby {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .about {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tag-text {
+        display: none;
+    }
+}
