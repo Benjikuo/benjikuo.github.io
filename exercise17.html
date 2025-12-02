@@ -1,47 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 17 - Media Queries</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 17 - Media Queries</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #74b9ff;
+      display: flex;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      margin: 40px;
+    }
+
+    /* Both boxes */
+    .box {
+      width: 300px;
+      background: transparent;
+    }
+
+    /* Shared block styles */
+    .top {
+      height: 120px;
+      background: #a8e6cf;
+      margin-bottom: 20px;
+    }
+
+    /* Left (a) middle bars */
+    .middle .m-row {
+      height: 50px;
+      background: #00cec9;
+      margin-bottom: 10px;
+    }
+
+    /* Left (a) bottom three blocks */
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bottom .b-col {
+      width: 32%;
+      height: 60px;
+      background: #dfe6e9;
+    }
+
+    /* Right (b) - three horizontal middle blocks */
+    .middle-b {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .middle-b .m-col {
+      width: 32%;
+      height: 80px;
+      background: #81ecec;
+    }
+
+    /* Right (b) bottom two large rows */
+    .bottom-b .b-row {
+      height: 60px;
+      background: #dfe6e9;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive: < 720px */
+    @media screen and (max-width: 720px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .box {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
+  <div class="container">
+    <!-- Left layout (a) -->
+    <div class="box a">
+      <div class="top"></div>
 
-        <!-- Left layout (a) -->
-        <div class="box a">
-            <div class="top"></div>
+      <div class="middle">
+        <div class="m-row"></div>
+        <div class="m-row"></div>
+        <div class="m-row"></div>
+      </div>
 
-            <div class="middle">
-                <div class="m-row"></div>
-                <div class="m-row"></div>
-                <div class="m-row"></div>
-            </div>
-
-            <div class="bottom">
-                <div class="b-col"></div>
-                <div class="b-col"></div>
-                <div class="b-col"></div>
-            </div>
-        </div>
-
-        <!-- Right layout (b) -->
-        <div class="box b">
-            <div class="top"></div>
-
-            <div class="middle-b">
-                <div class="m-col"></div>
-                <div class="m-col"></div>
-                <div class="m-col"></div>
-            </div>
-
-            <div class="bottom-b">
-                <div class="b-row"></div>
-                <div class="b-row"></div>
-            </div>
-        </div>
-
+      <div class="bottom">
+        <div class="b-col"></div>
+        <div class="b-col"></div>
+        <div class="b-col"></div>
+      </div>
     </div>
+
+    <!-- Right layout (b) -->
+    <div class="box b">
+      <div class="top"></div>
+
+      <div class="middle-b">
+        <div class="m-col"></div>
+        <div class="m-col"></div>
+        <div class="m-col"></div>
+      </div>
+
+      <div class="bottom-b">
+        <div class="b-row"></div>
+        <div class="b-row"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
