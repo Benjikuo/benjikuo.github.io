@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 16</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: all 0.4s ease;
+        }
+
+        #box1:hover {
+            width: 550px;
+        }
+
+        #box2:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+    </div>
+
+</body>
+</html>
